@@ -1,0 +1,1 @@
+shape_group_texture_7_16_bn_gfx.o: shape_group_texture_7_16_bn_gfx.s
