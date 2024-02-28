@@ -1,11 +1,12 @@
-bn_profiler.o: /home/ethan/Documents/test/butano/src/bn_profiler.cpp \
- /home/ethan/Documents/test/butano/include/bn_profiler.h \
- /home/ethan/Documents/test/butano/include/bn_config_doxygen.h \
- /home/ethan/Documents/test/butano/include/bn_common.h \
- /home/ethan/Documents/test/butano/include/../hw/include/bn_hw_common.h \
- /home/ethan/Documents/test/butano/include/bn_config_profiler.h
-/home/ethan/Documents/test/butano/include/bn_profiler.h:
-/home/ethan/Documents/test/butano/include/bn_config_doxygen.h:
-/home/ethan/Documents/test/butano/include/bn_common.h:
-/home/ethan/Documents/test/butano/include/../hw/include/bn_hw_common.h:
-/home/ethan/Documents/test/butano/include/bn_config_profiler.h:
+bn_profiler.o: \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/src/bn_profiler.cpp \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_profiler.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_config_doxygen.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_common.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/../hw/include/bn_hw_common.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_config_profiler.h
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_profiler.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_config_doxygen.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_common.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/../hw/include/bn_hw_common.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_config_profiler.h:

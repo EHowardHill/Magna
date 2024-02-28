@@ -1,4 +1,4 @@
 tonc_nocash.o: \
- /home/ethan/Documents/test/butano/hw/3rd_party/libtonc/asm/tonc_nocash.s \
- /home/ethan/Documents/test/butano/hw/3rd_party/libtonc/asm/../include/tonc_asminc.h
-/home/ethan/Documents/test/butano/hw/3rd_party/libtonc/asm/../include/tonc_asminc.h:
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/3rd_party/libtonc/asm/tonc_nocash.s \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/3rd_party/libtonc/asm/../include/tonc_asminc.h
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/3rd_party/libtonc/asm/../include/tonc_asminc.h:

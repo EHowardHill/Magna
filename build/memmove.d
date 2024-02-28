@@ -1,2 +1,2 @@
 memmove.o: \
- /home/ethan/Documents/test/butano/hw/3rd_party/agbabi/src/memmove.s
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/3rd_party/agbabi/src/memmove.s
