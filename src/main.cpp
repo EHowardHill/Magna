@@ -120,7 +120,7 @@ int main() {
         int p_y = player.y().integer();
 
         int dx = i_x != 0 && check_tile(i_x * 16 + p_x, -12 + p_y, current_world) && check_tile(i_x * 16 + p_x, 12 + p_y, current_world) ? i_x : 0;
-        int dy = i_y != 0 && check_tile(-12 + p_x, i_y * 16 + p_y, current_world) && check_tile(-12 + p_x, i_y * 16 + p_y, current_world) ? i_y : 0;
+        int dy = i_y != 0 && check_tile(-12 + p_x, i_y * 16 + p_y, current_world) && check_tile(12 + p_x, i_y * 16 + p_y, current_world) ? i_y : 0;
         player.set_position(p_x + dx, p_y + dy);
         
         if (i_x != 0 || i_y != 0) {
