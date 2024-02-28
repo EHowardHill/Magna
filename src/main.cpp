@@ -9,12 +9,20 @@
 #include <bn_sprite_ptr.h>
 #include <bn_camera_ptr.h>
 #include <bn_sprite_animate_actions.h>
-
+#include <bn_sprite_text_generator.h>
+#include <bn_sprite_font.h>
 #include "bn_sound_items.h"
+#include <bn_string.h>
+
+#include "bn_sprite_items_font_01.h"
+
 #include "bn_sprite_items_arrow.h"
-#include "bn_sprite_items_marker.h"
 #include "bn_sprite_items_enoki.h"
+
+#include "bn_sprite_items_chat_enoki01.h"
+
 #include "bn_regular_bg_ptr.h"
+#include "bn_regular_bg_items_bg_space.h"
 #include "bn_regular_bg_items_bg_grass.h"
 #include "bn_regular_bg_items_bg_grass_marked.h"
 
@@ -23,6 +31,16 @@ using namespace core;
 using namespace keypad;
 using namespace sprite_items;
 using namespace regular_bg_items;
+
+#define WEST 0
+#define EAST 1
+
+const sprite_font font = sprite_font(font_01);
+
+fixed_t<12> lerp(fixed a, int b, fixed_t<12> t)
+{
+	return a * (1 - t) + b * t;
+}
 
 // Reserved global memory
 class global_data
@@ -55,7 +73,7 @@ struct map {
     const bool collisions[256];
 };
 
-const struct map world[1] = {
+const map world[1] = {
     {
         5, 5,                   // Width + Height
         {                       // Events
@@ -74,6 +92,54 @@ const struct map world[1] = {
     }
 };
 
+
+
+#define END -1
+#define C_NULL  0
+#define C_ENOKI 1
+
+struct option {
+    const int ref;
+    const bn::string<64> text;
+};
+
+struct line {
+    const int ref;
+    const int reply;
+    const int speaker;
+    const int frame;
+    const int side;
+    const string<64> main;
+};
+
+const option replies[1][5] = {
+    {
+        {3, "Texas"}, 
+        {5, "Louisiana"}, 
+        {7, "Arkansas"}, 
+        {9, "Oklahoma"}, 
+        {11, "New Mexico"}
+    }
+};
+
+const line chat[1][13] = {
+    {
+        {0, END, C_ENOKI, 0, WEST, "Is this working?"},
+        {1, END, C_ENOKI, 1, EAST, "This ought to be working."},
+        {2, 0},
+        {3, END, C_ENOKI, 1, WEST, "Welcome to Texas!"},
+        {4, END, END},
+        {5, END, C_ENOKI, 1, WEST, "Welcome to Louisiana!"},
+        {6, END, END},
+        {7, END, C_ENOKI, 1, WEST, "Welcome to Arkansas!"},
+        {8, END, END},
+        {9, END, C_ENOKI, 1, WEST, "Welcome to Oklahoma!"},
+        {10, END, END},
+        {11, END, C_ENOKI, 1, WEST, "Welcome to New Mexico!"},
+        {12, END, END},
+    }
+};
+
 int coordsToNum(int x, int y, int width) {
     return (x % width) + (y * width);
 }
@@ -86,14 +152,9 @@ bool check_tile(int x, int y, int mapNum) {
     return !world[mapNum].collisions[coordsToNum(round32(x), round32(y), world[mapNum].width)];
 }
 
-int main() {
-    init();
-    globals = new global_data();
-
-    int current_world = 0;
-    int last_dir = 0;
-
+void overworld(int current_world) {
     bn::camera_ptr cam = bn::camera_ptr::create(0,0);
+    int last_dir = 0;
 
     vector<sprite_ptr, 32> collids;
 
@@ -145,6 +206,143 @@ int main() {
         }
 
         cam.set_position(p_x, p_y);
+        update();
+    }
+
+}
+
+int dialogue(int conversation) {
+
+    sprite_text_generator text_line(font);
+    vector<sprite_ptr, 24> text_vector[5];
+    string<28> text_cache[5];
+
+    auto bg = bg_space.create_bg(-144, -144);
+    auto w_chat = chat_enoki01.create_sprite(-160, 48, 0);
+    auto e_chat = chat_enoki01.create_sprite(160, 48, 0);
+    auto spr_arrow = arrow.create_sprite(-112, -64);
+    bool w_active = false;
+    bool e_active = false;
+    bool trigger_option = false;
+    int pos = 0;
+    int a_pos = 0;
+    int w_char = -1;
+    int e_char = -1;
+    int span = 0;
+
+    while (true) {
+
+        bg.set_position(span, span);
+        span = (span + 1) % 256;
+        auto state = &chat[conversation][pos];
+
+        if (down_pressed()) {
+            a_pos = (a_pos + 1) % 5;
+        }
+
+        if (up_pressed()) {
+            a_pos--;
+            if (a_pos < 0) a_pos = 4;
+        }
+
+        spr_arrow.set_y(lerp(spr_arrow.y(), -64 + (a_pos * 16), 0.5));
+
+        if (a_pressed() || pos == 0) {
+            int x_pos = 0;
+            int y_pos = 0;
+
+            for (int t = 0; t < 5; t++) {
+                text_cache[t].clear();
+                text_vector[t].clear();
+            }
+
+            if (state->speaker == END) return 0;
+
+            if (trigger_option) {
+                pos = replies[state->reply][a_pos].ref;
+                state = &chat[conversation][pos];
+            }
+
+            if (state->reply != END && !trigger_option) {
+
+                for (int t = 0; t < 5; t++) {
+                    text_cache[t] = replies[state->reply][t].text;
+                }
+
+                trigger_option = true;
+
+            } else {
+
+                int x_offset = -96;
+                sprite_ptr* a_chat;
+
+                if (state->side == WEST) {
+                    a_chat = &w_chat;
+                    w_active = true;
+                    w_char = state->speaker;
+                    if (w_char == state->speaker) x_offset = -84;
+                } else {
+                    a_chat = &e_chat;
+                    x_offset = 96;
+                    e_active = true;
+                    e_char = state->speaker;
+                    if (e_char == state->speaker) x_offset = 84;
+                }
+
+                switch (state->speaker) {
+                    case C_ENOKI:
+                        *a_chat = chat_enoki01.create_sprite(x_offset, 48, state->frame);
+                        break;
+                }
+
+                if (state->side == EAST) a_chat->set_horizontal_flip(true);
+
+                for (int t = 0; t < state->main.length(); t++) {
+                    if (x_pos > 20 && state->main.at(t) == ' ') {
+                        x_pos = 0;
+                        y_pos++;
+                    } else {
+                        text_cache[y_pos].push_back(state->main.at(t));
+                    }
+                    x_pos++;
+                }
+
+                pos++;
+                trigger_option = false;
+            }
+
+            text_line.generate(-94, -64, text_cache[0], text_vector[0]);
+            text_line.generate(-94, -48, text_cache[1], text_vector[1]);
+            text_line.generate(-94, -32, text_cache[2], text_vector[2]);
+            text_line.generate(-94, -16, text_cache[3], text_vector[3]);
+            text_line.generate(-94, 0, text_cache[4], text_vector[4]);
+        }
+
+        if (w_active) {
+            w_chat.set_x(lerp(w_chat.x(), -88, 0.2));
+        } else {
+            w_chat.set_x(lerp(w_chat.x(), -160, 0.2));
+        }
+
+        if (e_active) {
+            e_chat.set_x(lerp(e_chat.x(), 88, 0.2));
+        } else {
+            e_chat.set_x(lerp(e_chat.x(), 160, 0.2));
+        }
+
+        update();
+    }
+}
+
+int main() {
+    init();
+    globals = new global_data();
+
+    int current_world = 0;
+
+    while (true) {
+        dialogue(current_world);
+
         update();
     }
 }

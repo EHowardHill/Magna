@@ -50,17 +50,26 @@ main.o: /home/ethan/Documents/GitHub/magna/src/main.cpp \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_bpp_mode.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_compression_type.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_animate_actions_fwd.h \
- /home/ethan/Documents/GitHub/magna/build/bn_sound_items.h \
- /home/ethan/Documents/GitHub/magna/butano/include/bn_sound_item.h \
- /home/ethan/Documents/GitHub/magna/build/bn_sprite_items_arrow.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_text_generator.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_font.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_item.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_shape_size.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_palette_item.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_color.h \
- /home/ethan/Documents/GitHub/magna/build/bn_sprite_items_marker.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_utf8_characters_map_ref.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_power_of_two.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_utf8_character.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_font.h \
+ /home/ethan/Documents/GitHub/magna/build/bn_sound_items.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_sound_item.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_string.h \
+ /home/ethan/Documents/GitHub/magna/build/bn_sprite_items_font_01.h \
+ /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_item.h \
+ /home/ethan/Documents/GitHub/magna/build/bn_sprite_items_arrow.h \
  /home/ethan/Documents/GitHub/magna/build/bn_sprite_items_enoki.h \
+ /home/ethan/Documents/GitHub/magna/build/bn_sprite_items_chat_enoki01.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_ptr.h \
- /home/ethan/Documents/GitHub/magna/build/bn_regular_bg_items_bg_grass.h \
+ /home/ethan/Documents/GitHub/magna/build/bn_regular_bg_items_bg_space.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_item.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_bg_palette_item.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_map_item.h \
@@ -68,6 +77,7 @@ main.o: /home/ethan/Documents/GitHub/magna/src/main.cpp \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_point.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_map_cell.h \
  /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_tiles_item.h \
+ /home/ethan/Documents/GitHub/magna/build/bn_regular_bg_items_bg_grass.h \
  /home/ethan/Documents/GitHub/magna/build/bn_regular_bg_items_bg_grass_marked.h
 /home/ethan/Documents/GitHub/magna/butano/include/bn_core.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_span.h:
@@ -120,17 +130,26 @@ main.o: /home/ethan/Documents/GitHub/magna/src/main.cpp \
 /home/ethan/Documents/GitHub/magna/butano/include/bn_bpp_mode.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_compression_type.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_animate_actions_fwd.h:
-/home/ethan/Documents/GitHub/magna/build/bn_sound_items.h:
-/home/ethan/Documents/GitHub/magna/butano/include/bn_sound_item.h:
-/home/ethan/Documents/GitHub/magna/build/bn_sprite_items_arrow.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_text_generator.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_font.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_item.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_shape_size.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_palette_item.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_color.h:
-/home/ethan/Documents/GitHub/magna/build/bn_sprite_items_marker.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_utf8_characters_map_ref.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_power_of_two.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_utf8_character.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_font.h:
+/home/ethan/Documents/GitHub/magna/build/bn_sound_items.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_sound_item.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_string.h:
+/home/ethan/Documents/GitHub/magna/build/bn_sprite_items_font_01.h:
+/home/ethan/Documents/GitHub/magna/butano/include/bn_sprite_item.h:
+/home/ethan/Documents/GitHub/magna/build/bn_sprite_items_arrow.h:
 /home/ethan/Documents/GitHub/magna/build/bn_sprite_items_enoki.h:
+/home/ethan/Documents/GitHub/magna/build/bn_sprite_items_chat_enoki01.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_ptr.h:
-/home/ethan/Documents/GitHub/magna/build/bn_regular_bg_items_bg_grass.h:
+/home/ethan/Documents/GitHub/magna/build/bn_regular_bg_items_bg_space.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_item.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_bg_palette_item.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_map_item.h:
@@ -138,4 +157,5 @@ main.o: /home/ethan/Documents/GitHub/magna/src/main.cpp \
 /home/ethan/Documents/GitHub/magna/butano/include/bn_point.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_map_cell.h:
 /home/ethan/Documents/GitHub/magna/butano/include/bn_regular_bg_tiles_item.h:
+/home/ethan/Documents/GitHub/magna/build/bn_regular_bg_items_bg_grass.h:
 /home/ethan/Documents/GitHub/magna/build/bn_regular_bg_items_bg_grass_marked.h:
