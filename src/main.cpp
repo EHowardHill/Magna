@@ -98,7 +98,6 @@ int main() {
 
     auto player = enoki.create_sprite(world[current_world].ports[0].my_x * 32, world[current_world].ports[0].my_y * 32);
     auto player_anim = create_sprite_animate_action_forever(player, 4, enoki.tiles_item(), 0, 1, 0, 2);
-
     auto bg = bg_space.create_bg(0, 0);
 
     player.set_camera(cam);
@@ -111,11 +110,6 @@ int main() {
             collids.push_back(a);
         }
     }
-
-    auto mark_x = marker.create_sprite(world[current_world].ports[0].my_x * 32, world[current_world].ports[0].my_y * 32);
-    auto mark_y = marker.create_sprite(world[current_world].ports[0].my_x * 32, world[current_world].ports[0].my_y * 32);
-    mark_x.set_camera(cam);
-    mark_y.set_camera(cam);
 
     while (true) {
 
