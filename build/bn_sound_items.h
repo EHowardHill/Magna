@@ -5,9 +5,9 @@
 
 namespace bn::sound_items
 {
-    constexpr inline sound_item sfx_blip(0);
-    constexpr inline sound_item sfx_poolball(1);
-    constexpr inline sound_item sfx_shoot(2);
+    constexpr inline sound_item sfx_blip(1);
+    constexpr inline sound_item sfx_poolball(2);
+    constexpr inline sound_item sfx_shoot(3);
 }
 
 #endif

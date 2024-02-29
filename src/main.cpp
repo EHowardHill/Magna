@@ -11,6 +11,9 @@
 #include <bn_sprite_animate_actions.h>
 #include <bn_sprite_text_generator.h>
 #include <bn_sprite_font.h>
+#include "bn_music.h"
+#include "bn_music_actions.h"
+#include "bn_music_items.h"
 #include "bn_sound_items.h"
 #include <bn_string.h>
 
@@ -232,22 +235,29 @@ int dialogue(int conversation) {
 
     while (true) {
 
-        bg.set_position(span, span);
+        bg.set_position(span, span / 2);
         span = (span + 1) % 256;
         auto state = &chat[conversation][pos];
 
-        if (down_pressed()) {
-            a_pos = (a_pos + 1) % 5;
-        }
+        if (spr_arrow.visible()) {
+            if (down_pressed()) {
+                sound_items::sfx_poolball.play();
+                a_pos = (a_pos + 1) % 5;
+            }
 
-        if (up_pressed()) {
-            a_pos--;
-            if (a_pos < 0) a_pos = 4;
-        }
+            if (up_pressed()) {
+                sound_items::sfx_poolball.play();
+                a_pos--;
+                if (a_pos < 0) a_pos = 4;
+            }
 
-        spr_arrow.set_y(lerp(spr_arrow.y(), -64 + (a_pos * 16), 0.5));
+            spr_arrow.set_y(lerp(spr_arrow.y(), -64 + (a_pos * 16), 0.5));
+        }
 
         if (a_pressed() || pos == 0) {
+
+            sound_items::sfx_blip.play();
+
             int x_pos = 0;
             int y_pos = 0;
 
@@ -258,18 +268,18 @@ int dialogue(int conversation) {
 
             if (state->speaker == END) return 0;
 
-            if (trigger_option) {
+            if (spr_arrow.visible()) {
                 pos = replies[state->reply][a_pos].ref;
                 state = &chat[conversation][pos];
             }
 
-            if (state->reply != END && !trigger_option) {
+            if (state->reply != END && !spr_arrow.visible()) {
 
                 for (int t = 0; t < 5; t++) {
                     text_cache[t] = replies[state->reply][t].text;
                 }
 
-                trigger_option = true;
+                spr_arrow.set_visible(true);
 
             } else {
 
@@ -308,7 +318,7 @@ int dialogue(int conversation) {
                 }
 
                 pos++;
-                trigger_option = false;
+                spr_arrow.set_visible(false);
             }
 
             text_line.generate(-94, -64, text_cache[0], text_vector[0]);
@@ -339,6 +349,7 @@ int main() {
     globals = new global_data();
 
     int current_world = 0;
+    bn::music_items::dixie.play(0.5);
 
     while (true) {
         dialogue(current_world);

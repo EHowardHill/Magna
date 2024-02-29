@@ -6,7 +6,7 @@
 extern const uint8_t _bn_audio_soundbank_bin[];
 extern const uint8_t _bn_audio_soundbank_bin_end[];
 #if __cplusplus >= 201103L
-static constexpr size_t _bn_audio_soundbank_bin_size=28132;
+static constexpr size_t _bn_audio_soundbank_bin_size=71088;
 #else
-static const size_t _bn_audio_soundbank_bin_size=28132;
+static const size_t _bn_audio_soundbank_bin_size=71088;
 #endif

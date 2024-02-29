@@ -1,8 +1,8 @@
 bn_hw_cstdlib.o: \
- /home/ethan/Documents/GitHub/magna/butano/hw/src/bn_hw_cstdlib.cpp \
- /home/ethan/Documents/GitHub/magna/butano/include/bn_cstdlib.h \
- /home/ethan/Documents/GitHub/magna/butano/include/bn_common.h \
- /home/ethan/Documents/GitHub/magna/butano/include/../hw/include/bn_hw_common.h
-/home/ethan/Documents/GitHub/magna/butano/include/bn_cstdlib.h:
-/home/ethan/Documents/GitHub/magna/butano/include/bn_common.h:
-/home/ethan/Documents/GitHub/magna/butano/include/../hw/include/bn_hw_common.h:
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/src/bn_hw_cstdlib.cpp \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_cstdlib.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_common.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/../hw/include/bn_hw_common.h
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_cstdlib.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_common.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/../hw/include/bn_hw_common.h:

@@ -1,12 +1,12 @@
 bn_hw_irq.o: \
- /home/ethan/Documents/GitHub/magna/butano/hw/src/bn_hw_irq.cpp \
- /home/ethan/Documents/GitHub/magna/butano/hw/src/../include/bn_hw_irq.h \
- /home/ethan/Documents/GitHub/magna/butano/include/bn_common.h \
- /home/ethan/Documents/GitHub/magna/butano/include/../hw/include/bn_hw_common.h \
- /home/ethan/Documents/GitHub/magna/butano/hw/src/../3rd_party/libugba/include/ugba/interrupts.h \
- /home/ethan/Documents/GitHub/magna/butano/hw/src/../3rd_party/libugba/include/ugba/definitions.h
-/home/ethan/Documents/GitHub/magna/butano/hw/src/../include/bn_hw_irq.h:
-/home/ethan/Documents/GitHub/magna/butano/include/bn_common.h:
-/home/ethan/Documents/GitHub/magna/butano/include/../hw/include/bn_hw_common.h:
-/home/ethan/Documents/GitHub/magna/butano/hw/src/../3rd_party/libugba/include/ugba/interrupts.h:
-/home/ethan/Documents/GitHub/magna/butano/hw/src/../3rd_party/libugba/include/ugba/definitions.h:
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/src/bn_hw_irq.cpp \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/src/../include/bn_hw_irq.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_common.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/../hw/include/bn_hw_common.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/src/../3rd_party/libugba/include/ugba/interrupts.h \
+ /mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/src/../3rd_party/libugba/include/ugba/definitions.h
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/src/../include/bn_hw_irq.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/bn_common.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/include/../hw/include/bn_hw_common.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/src/../3rd_party/libugba/include/ugba/interrupts.h:
+/mnt/c/Users/Ethan/Documents/GitHub/Magna/butano/hw/src/../3rd_party/libugba/include/ugba/definitions.h:
