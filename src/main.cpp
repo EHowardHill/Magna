@@ -235,7 +235,7 @@ int dialogue(int conversation) {
 
     while (true) {
 
-        bg.set_position(span, span / 2);
+        bg.set_position(span, span);
         span = (span + 1) % 256;
         auto state = &chat[conversation][pos];
 
